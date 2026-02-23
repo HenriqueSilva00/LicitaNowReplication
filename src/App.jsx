@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import FirtsPage from "./components/FirstPage";
+import FirstPage from "./components/FirstPage";
 import SecondPage from "./components/SecondPage";
 import ThirdPage from "./components/ThirdPage";
 import Newsletter from "./components/Newsletter";
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="app-container">
       <Navbar />
-      <FirtsPage />
+      <FirstPage />
       <SecondPage />
       <ThirdPage />
       <Newsletter />

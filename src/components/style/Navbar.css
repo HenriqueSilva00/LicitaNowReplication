@@ -1,16 +1,20 @@
-/* NAVBAR BASE */
 .navbar {
-  position: fixed;
+  position: absolute; /* 👈 sobrepõe */
   top: 0;
+  left: 0;
   width: 100%;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.4s ease;
-  background: transparent;
-  color: rgb(0, 0, 0);
-  z-index: 1000;
+  background: transparent; /* 👈 sem fundo */
+  z-index: 1000; /* garante que fica por cima */
+}
+
+.navbar a {
+  color: white; /* importante por causa do fundo escuro */
+  text-decoration: none;
+  font-weight: 500;
 }
 
 /* Estado após scroll */
@@ -46,28 +50,39 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: white;
-  color: black;
+
+  background: rgba(255, 255, 255, 0.08); /* transparente */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* suporte Safari */
+
+  color: white;
   list-style: none;
   padding: 10px 0;
-  min-width: 180px;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+
+  margin-top: 10px;
 }
 
 /* Itens dropdown */
 .dropdown-menu li {
-  padding: 10px 20px;
-  transition: 0.2s ease;
+  padding: 12px 20px;
+  transition: all 0.25s ease;
+  cursor: pointer;
 }
 
+/* Hover verde */
 .dropdown-menu li:hover {
-  background: #7fad01;
+  background: rgba(127, 173, 1, 0.15);
+  color: #7fad01;
 }
 
 /* Mostrar dropdown */
@@ -80,15 +95,18 @@
 /* BOTÃO LOGIN */
 .login-btn {
   padding: 8px 18px;
-  border: none;
   border-radius: 20px;
   background: #7fad01;
   color: white;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
   font-weight: 500;
+  border: 2px solid #7fad01; /* já define a borda */
 }
 
+/* Hover */
 .login-btn:hover {
-  background: #009acd;
+  background: rgba(255, 255, 255, 0.08); /* transparente */
+  color: white;
+  border: 1px solid #7fad01; /* já define a borda */
 }
