@@ -1,0 +1,69 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Estrutura principal */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: calc(100vw - 15px);
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-links li:hover {
+  color: #00bfff;
+}
+
+/* MAIN */
+.main-content {
+  margin-top: 0px; /* espaço para navbar fixa */
+  flex: 1;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 60px 40px;
+  background: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+  color: #111;
+}
+
+/* FOOTER */
+.footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}

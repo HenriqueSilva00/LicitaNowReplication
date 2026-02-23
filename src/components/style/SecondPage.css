@@ -1,0 +1,10 @@
+.second-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #334155;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}

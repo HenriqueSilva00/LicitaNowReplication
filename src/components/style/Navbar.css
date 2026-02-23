@@ -1,0 +1,94 @@
+/* NAVBAR BASE */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s ease;
+  background: transparent;
+  color: rgb(0, 0, 0);
+  z-index: 1000;
+}
+
+/* Estado após scroll */
+.navbar-scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: #7fad01;
+}
+
+.logo-img {
+  height: 40px; /* controla o tamanho */
+  width: auto;
+  object-fit: contain;
+}
+
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* DROPDOWN BASE */
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+/* MENU */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  color: black;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.3s ease;
+}
+
+/* Itens dropdown */
+.dropdown-menu li {
+  padding: 10px 20px;
+  transition: 0.2s ease;
+}
+
+.dropdown-menu li:hover {
+  background: #7fad01;
+}
+
+/* Mostrar dropdown */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* BOTÃO LOGIN */
+.login-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  background: #7fad01;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.login-btn:hover {
+  background: #009acd;
+}
