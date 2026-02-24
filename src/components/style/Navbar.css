@@ -26,9 +26,10 @@
 }
 
 .logo-img {
-  height: 40px; /* controla o tamanho */
+  height: 50px; /* controla o tamanho */
   width: auto;
   object-fit: contain;
+  margin-left: 5rem;
 }
 
 /* NAV LINKS */
@@ -37,6 +38,46 @@
   display: flex;
   align-items: center;
   gap: 30px;
+}
+
+.nav-links > li {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Linha apenas nos items principais */
+.nav-links > li:not(:has(button))::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #7fad01;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+/* Hover apenas nos principais */
+.nav-links > li:hover::after {
+  width: 100%;
+}
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.dropdown-icon {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+/* Quando hover ativa dropdown */
+.dropdown:hover .dropdown-icon {
+  transform: rotate(90deg);
 }
 
 /* DROPDOWN BASE */

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
+import { FaChevronRight } from "react-icons/fa";
 import "./style/Navbar.css";
 
 function Navbar() {
@@ -23,7 +24,9 @@ function Navbar() {
       <ul className="nav-links">
         {/* SOBRE */}
         <li className="dropdown">
-          Sobre
+          <span className="dropdown-trigger">
+            Sobre <FaChevronRight className="dropdown-icon" />
+          </span>
           <ul className="dropdown-menu">
             <li>Sobre nós</li>
             <li>Créditos</li>
@@ -36,7 +39,9 @@ function Navbar() {
 
         {/* SOLUÇÕES */}
         <li className="dropdown">
-          Soluções
+          <span className="dropdown-trigger">
+            Soluções <FaChevronRight className="dropdown-icon" />
+          </span>
           <ul className="dropdown-menu">
             <li>Concursos</li>
             <li>Serviços</li>
