@@ -101,7 +101,7 @@
 .btn-secondary {
   padding: 12px 22px;
   border-radius: 999px;
-  border: 2px solid transparent;
+  border: 1px solid;
   cursor: pointer;
   transition: all 0.25s ease;
   font-weight: 600;
@@ -120,6 +120,7 @@
 .btn-primary:hover {
   background: transparent;
   color: #7fad01;
+  border: 1px solid #ffffff;
 }
 
 .btn-secondary {
@@ -130,8 +131,8 @@
 
 .btn-secondary:hover {
   background: rgba(127, 173, 1, 0.15);
-  border-color: rgba(127, 173, 1, 0.6);
   color: #7fad01;
+  border: 1px solid #ffffff;
 }
 
 /* RIGHT */
@@ -204,12 +205,121 @@
   line-height: 1.4;
 }
 
-/* RESPONSIVO */
-@media (max-width: 900px) {
-  .hero-card {
-    grid-template-columns: 1fr;
+/* =========================
+   MOBILE ONLY (<= 600px)
+   ========================= */
+@media (max-width: 600px) {
+  .first-page {
+    height: auto; /* evita problemas de 100vh em mobile */
+    min-height: 100svh; /* usa viewport “segura” do mobile */
+    padding: 80px 0 40px 0;
+    align-items: stretch;
   }
+
+  .hero-wrap {
+    width: 92%;
+    margin: 0 auto;
+    display: block; /* simplifica o layout */
+  }
+
+  .hero-card {
+    grid-template-columns: 1fr; /* 1 coluna */
+    gap: 18px;
+    height: auto; /* em vez de 65vh */
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .hero-left {
+    padding: 0;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .hero-copy {
+    gap: 12px;
+  }
+
+  .hero-eyebrow {
+    margin-top: 6px;
+    font-size: 0.8rem;
+  }
+
   .hero-title {
-    font-size: 2.15rem;
+    font-size: 1.8rem;
+    line-height: 1.12;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    max-width: 100%;
+    margin-top: 10px;
+    text-align: left; /* justify no mobile costuma ficar feio */
+  }
+
+  /* CTAs em “stack” */
+  .hero-cta {
+    margin-top: 12px;
+    gap: 10px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    text-align: justify;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 70%; /* 👈 largura igual */
+    height: 52px; /* 👈 altura igual */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto; /* 👈 centra horizontalmente */
+  }
+
+  /* RIGHT / STATS */
+  .hero-right {
+    justify-content: flex-start;
+  }
+
+  .stats-grid {
+    gap: 12px;
+  }
+
+  .stat-item {
+    padding: 12px 12px;
+    border-radius: 12px;
+  }
+
+  .stat-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    font-size: 1.05rem;
+  }
+
+  .stat-value {
+    font-size: 1.2rem;
+  }
+
+  .stat-label {
+    font-size: 0.92rem;
+  }
+
+  .stats-note {
+    font-size: 0.92rem;
+  }
+}
+
+/* Um “extra” para telemóveis muito pequenos */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+  .hero-card {
+    padding: 16px;
   }
 }

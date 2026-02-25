@@ -1,0 +1,78 @@
+.back-to-top {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 14px;
+  border: none;
+
+  background: #85b400;
+  color: #111;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+
+  /* ✅ estado base (assumimos escondido) */
+  transform: translateX(90px);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* ✅ aparece vindo de fora do ecrã */
+.back-to-top.show {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ✅ desaparece indo para fora do ecrã (direita) */
+.back-to-top.hide {
+  transform: translateX(90px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.back-to-top:hover {
+  transform: translateX(0) translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 70px; /* 👈 fica acima do cookie */
+    right: 12px; /* 👈 mais encostado à lateral */
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 12px;
+
+    /* animação menos exagerada no mobile */
+    transform: translateX(60px);
+    color: aliceblue;
+    padding: 0;
+  }
+
+  .back-to-top svg {
+    width: 15px;
+    height: 15px;
+    stroke-width: 2.8; /* 👈 deixa a seta mais visível */
+  }
+
+  .back-to-top.hide {
+    transform: translateX(60px);
+  }
+
+  .back-to-top.show {
+    transform: translateX(0);
+  }
+}

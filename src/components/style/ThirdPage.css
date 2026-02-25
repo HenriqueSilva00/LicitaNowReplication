@@ -176,21 +176,145 @@
 .btn-primary:hover {
   background: transparent;
   color: #85b400;
+  border: 2px solid #85b400;
 }
 
-/* Responsivo */
-@media (max-width: 980px) {
+/* =========================
+   THIRD PAGE - MOBILE ONLY
+   ========================= */
+@media (max-width: 768px) {
+  .third-page {
+    padding: 34px 0;
+  }
+
+  .third-header {
+    max-width: 92%;
+    margin: 0 auto 6px auto;
+    gap: 12px;
+  }
+
+  .third-header h2 {
+    font-size: 2.05rem;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .third-header p {
+    font-size: 0.98rem;
+    line-height: 1.55;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* --- Troca o arco por timeline vertical --- */
   .timeline-arc {
-    width: 100%;
-    height: 520px;
+    width: 92%;
+    height: auto;
+    margin: 18px auto 0;
+    position: relative;
+    padding-left: 18px; /* espaço para a linha */
+    overflow: visible;
+  }
+
+  /* Esconde o SVG do arco no mobile */
+  .timeline-svg {
+    display: none;
+  }
+
+  /* Linha vertical */
+  .timeline-arc::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 4px;
+    bottom: 4px;
+    width: 4px;
+    border-radius: 999px;
+    background: rgba(17, 17, 17, 0.12);
   }
 
   .timeline-step {
-    width: min(320px, 80vw);
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+
+    width: 100% !important;
+    max-width: 520px;
+    margin: 0 auto 14px !important;
+
+    z-index: 1;
   }
 
-  /* Em mobile os cards ficam mais “altos”, então dá mais espaço */
+  /* se houver inline style do tipo translate(...) */
+  .timeline-step[style] {
+    transform: none !important;
+  }
+
+  /* Dot alinhado na linha */
+  .step-dot {
+    position: absolute;
+    left: -16px;
+    top: 18px;
+    margin: 0;
+    transform: none;
+    z-index: 2;
+  }
+
+  .step-card {
+    margin-top: 0 !important;
+  }
+
+  /* Hover não é relevante no touch (mantemos leve) */
+  .timeline-step:hover .step-card {
+    transform: none;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.06);
+  }
+
+  .step-title {
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .step-desc {
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  /* CTA */
   .timeline-cta {
-    margin-top: 10px;
+    width: 92%;
+    margin: 12px auto 0;
+    gap: 10px;
+  }
+
+  .timeline-note {
+    max-width: 100%;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+    display: inline-flex;
+  }
+}
+
+/* Extra para ecrãs muito pequenos */
+@media (max-width: 380px) {
+  .third-header h2 {
+    font-size: 1.85rem;
+  }
+
+  .timeline-arc {
+    padding-left: 16px;
+  }
+
+  .step-dot {
+    left: -16px;
   }
 }

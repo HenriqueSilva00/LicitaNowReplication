@@ -134,18 +134,111 @@
 }
 
 /* Responsive */
-@media (max-width: 980px) {
-  .fourth-wrap {
-    grid-template-columns: 1fr;
+/* =========================
+   FOURTH PAGE - MOBILE ONLY
+   ========================= */
+@media (max-width: 768px) {
+  .fourth-page {
+    padding: 56px 0;
+    overflow: hidden;
   }
 
-  .fourth-right {
-    align-items: center;
-    text-align: center;
+  /* opcional: blur menos agressivo no mobile (performance) */
+  .fourth-page::before {
+    filter: blur(10px);
+    transform: scale(1.08);
+  }
+
+  .fourth-wrap {
+    display: flex; /* 🔥 troca grid por flex */
+    flex-direction: column;
+    gap: 22px;
+    width: 92%;
+    margin: 0 auto;
   }
 
   .stats-grid-2x2 {
-    max-width: 680px;
-    margin: 0 auto;
+    order: 2; /* vai para baixo */
+    width: 90%;
+  }
+
+  .fourth-right {
+    order: 1; /* sobe para cima */
+  }
+
+  .fourth-divider {
+    display: none;
+  }
+
+  /* stats: em mobile vira 1 coluna (mais legível) */
+  .stats-grid-2x2 {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 👈 centra horizontalmente */
+    text-align: center; /* 👈 centra texto */
+  }
+
+  .stat-card-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+  }
+
+  .stat-card-value {
+    font-size: 1.4rem;
+  }
+
+  .stat-card-label {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  /* texto */
+  .fourth-right {
+    gap: 12px;
+    align-items: flex-start;
+    text-align: left; /* 👈 melhor no mobile */
+  }
+
+  .fourth-right h2 {
+    font-size: 1.95rem;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .fourth-right p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* tag ligeiramente mais compacta */
+  .section-tag {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+/* Extra: em “phablet” (ex: 500-768px), podes voltar a 2 colunas nos cards */
+@media (min-width: 520px) and (max-width: 768px) {
+  .stats-grid-2x2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Extra para ecrãs muito pequenos */
+@media (max-width: 380px) {
+  .fourth-page {
+    padding: 48px 0;
+  }
+
+  .fourth-right h2 {
+    font-size: 1.75rem;
   }
 }

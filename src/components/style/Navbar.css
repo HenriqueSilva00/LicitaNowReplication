@@ -1,28 +1,34 @@
 .navbar {
-  position: absolute; /* 👈 sobrepõe */
+  position: fixed; /* ✅ acompanha sempre */
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 40px;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+  padding-right: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent; /* 👈 sem fundo */
-  z-index: 1000; /* garante que fica por cima */
+
+  background: transparent; /* ✅ topo transparente */
+  z-index: 1000;
+
+  transition: background 0.25s ease, box-shadow 0.25s ease, padding 0.25s ease;
 }
 
 .navbar a {
-  color: white; /* importante por causa do fundo escuro */
+  color: white;
   text-decoration: none;
   font-weight: 500;
 }
 
 /* Estado após scroll */
-.navbar-scrolled {
-  background: rgba(0, 0, 0, 0.9);
+.navbar.navbar-scrolled {
+  background: #141414;
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  color: #7fad01;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .logo-img {
@@ -30,6 +36,7 @@
   width: auto;
   object-fit: contain;
   margin-left: 5rem;
+  padding-top: 10px;
 }
 
 /* NAV LINKS */
@@ -37,7 +44,8 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 50px;
+  padding-right: 60px;
 }
 
 .nav-links > li {
@@ -113,6 +121,15 @@
   margin-top: 10px;
 }
 
+.navbar.navbar-scrolled .dropdown-menu {
+  background: #141414;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
 /* Itens dropdown */
 .dropdown-menu li {
   padding: 12px 20px;
@@ -120,10 +137,19 @@
   cursor: pointer;
 }
 
+.navbar.navbar-scrolled .dropdown-menu li {
+  color: #ffffff;
+}
+
 /* Hover verde */
 .dropdown-menu li:hover {
   background: rgba(127, 173, 1, 0.15);
   color: #7fad01;
+}
+
+.navbar.navbar-scrolled .dropdown-menu li:hover {
+  background: rgba(133, 180, 0, 0.15);
+  color: #85b400;
 }
 
 /* Mostrar dropdown */
@@ -142,7 +168,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
-  border: 2px solid #7fad01; /* já define a borda */
+  border: 1px solid #7fad01; /* já define a borda */
 }
 
 /* Hover */
@@ -150,4 +176,222 @@
   background: rgba(255, 255, 255, 0.08); /* transparente */
   color: white;
   border: 1px solid #7fad01; /* já define a borda */
+}
+
+/* Escondido por default (desktop) */
+.hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+/* =========================
+   MOBILE MENU: DESLIGADO NO DESKTOP
+   ========================= */
+.mobile-menu-overlay,
+.mobile-menu-center {
+  display: none; /* ✅ não aparece no desktop */
+}
+
+/* =========================
+   NAVBAR MOBILE ONLY (<= 768px)
+   ========================= */
+@media (max-width: 768px) {
+  .mobile-menu-overlay,
+  .mobile-menu-center {
+    display: block;
+  }
+  .mobile-menu-center {
+    display: block;
+  }
+
+  .navbar {
+    padding: 10px 14px;
+    padding-right: 14px;
+    display: flex; /* ✅ mostrar navbar */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 40px;
+    margin-left: 0; /* remove o offset grande */
+    padding-top: 0;
+  }
+
+  /* Esconde menu desktop */
+  .nav-links {
+    display: none;
+  }
+
+  /* Dropdowns por hover não servem no mobile */
+  .dropdown:hover .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+  }
+
+  /* Remove a “linha” hover dos items (inútil no mobile) */
+  .nav-links > li:not(:has(button))::after {
+    display: none;
+  }
+
+  /* --- Hamburguer (se tiveres um botão no JSX com estas classes) --- */
+  .hamburger-btn {
+    width: 44px;
+    height: 44px;
+    padding: 0; /* ✅ evita caixa “inflar” */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    cursor: pointer;
+    color: #fff; /* ✅ importante para lucide */
+    line-height: 0; /* ✅ evita “ponto”/baseline */
+  }
+
+  /* Força o ícone (SVG) a ter tamanho real */
+  .hamburger-btn svg {
+    width: 24px;
+    height: 24px;
+    display: block; /* ✅ remove “ponto” inline */
+    stroke-width: 2.5;
+  }
+
+  .navbar.navbar-scrolled .hamburger-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Bloquear scroll quando menu está aberto */
+  body.mobile-open {
+    overflow: hidden;
+  }
+
+  /* Overlay full-screen com blur */
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999; /* abaixo do modal (1001) e acima do site */
+
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  .mobile-menu-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Modal centrado “glass” */
+  .mobile-menu-center {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.98);
+
+    width: min(92vw, 420px);
+    padding: 18px;
+    border-radius: 18px;
+
+    z-index: 1001;
+
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+  }
+
+  .mobile-menu-center.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .mobile-links-center {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobile-links-center li {
+    padding: 14px 14px;
+    border-radius: 14px;
+
+    color: white;
+    cursor: pointer;
+
+    transition: background 0.25s ease, border-color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .mobile-links-center li:hover {
+    background: rgba(127, 173, 1, 0.14);
+    border-color: rgba(127, 173, 1, 0.45);
+    transform: scale(1.01);
+  }
+
+  .mobile-login-center {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px 18px;
+    border-radius: 14px;
+  }
+
+  /* Trigger com seta */
+  .mobile-dropdown-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Seta animação */
+  .mobile-chevron {
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-chevron.open {
+    transform: rotate(180deg);
+  }
+
+  /* Submenu escondido */
+  .mobile-submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Submenu aberto */
+  .mobile-submenu.open {
+    max-height: 400px; /* suficiente para os itens */
+  }
+
+  /* Itens do submenu */
+  .mobile-submenu li {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+  }
 }

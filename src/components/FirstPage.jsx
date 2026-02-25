@@ -1,5 +1,6 @@
 import "./style/FirstPage.css";
 import { FaFolderOpen, FaGavel, FaUsers, FaArrowRight } from "react-icons/fa";
+import Counter from "./Counter";
 
 function FirstPage() {
   return (
@@ -42,7 +43,9 @@ function FirstPage() {
                   <FaFolderOpen />
                 </div>
                 <div className="stat-text">
-                  <div className="stat-value">500+</div>
+                  <div className="stat-value">
+                    <Counter end={500} duration={700} suffix="+" />
+                  </div>
                   <div className="stat-label">Projetos Concluídos</div>
                 </div>
               </div>
@@ -52,7 +55,9 @@ function FirstPage() {
                   <FaGavel />
                 </div>
                 <div className="stat-text">
-                  <div className="stat-value">80+</div>
+                  <div className="stat-value">
+                    <Counter end={80} duration={600} suffix="+" />
+                  </div>
                   <div className="stat-label">Concursos Ativos</div>
                 </div>
               </div>
@@ -62,7 +67,9 @@ function FirstPage() {
                   <FaUsers />
                 </div>
                 <div className="stat-text">
-                  <div className="stat-value">1200+</div>
+                  <div className="stat-value">
+                    <Counter end={1200} duration={900} suffix="+" />
+                  </div>
                   <div className="stat-label">Utilizadores Registados</div>
                 </div>
               </div>

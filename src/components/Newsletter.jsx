@@ -49,15 +49,32 @@ function Newsletter() {
 
               <div className="form-field">
                 <label>Especialidade</label>
-                <input
-                  type="text"
-                  placeholder="Ex: Fiscalização, Engenharia, Construção..."
-                />
+                <select defaultValue="">
+                  <option value="" disabled>
+                    Selecione a sua especialidade
+                  </option>
+                  <option value="arquitetura">Arquitetura</option>
+                  <option value="engenharia_civil">Engenharia Civil</option>
+                  <option value="empreiteiro">Empreiteiro</option>
+                  <option value="eletricista">Eletricista</option>
+                  <option value="canalizador">Canalizador</option>
+                  <option value="carpinteiro">Carpinteiro</option>
+                  <option value="fornecedor_materiais">
+                    Fornecedor de materiais
+                  </option>
+                </select>
               </div>
 
               <div className="form-field">
                 <label>Experiência</label>
-                <input type="text" placeholder="Ex: 5 anos, 10 anos..." />
+                <select defaultValue="">
+                  <option value="" disabled>
+                    Selecione os anos de experiência
+                  </option>
+                  <option value="1-5">1 – 5 anos</option>
+                  <option value="6-15">6 – 15 anos</option>
+                  <option value="+15">+15 anos</option>
+                </select>
               </div>
 
               <div className="form-field form-field-full">

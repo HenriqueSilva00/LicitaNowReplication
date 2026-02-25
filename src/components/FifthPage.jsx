@@ -93,7 +93,7 @@ function FifthPage() {
 
                   <button className="btn-outline">
                     <FaClock className="btn-icon" />
-                    Agendar demonstração
+                    Agendar demo
                   </button>
                 </div>
               </div>

@@ -1,0 +1,55 @@
+.cookie-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 14px;
+  border: none;
+
+  background: #141414;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+
+  transition: 0.25s ease;
+  z-index: 2000;
+}
+
+.cookie-button img {
+  width: 25px; /* controla tamanho da cookie */
+  height: 25px;
+  object-fit: contain;
+  transition: 0.3s ease;
+}
+
+.cookie-button:hover {
+  background: #85b400;
+  transform: translateY(-3px);
+}
+
+.cookie-button:hover img {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .cookie-button {
+    bottom: 18px; /* menos afastado do fundo */
+    right: 12px; /* 👈 mais encostado à lateral */
+
+    width: 40px; /* menor */
+    height: 40px;
+
+    border-radius: 12px;
+  }
+
+  .cookie-button img {
+    width: 18px; /* 👈 ícone mais pequeno */
+    height: 18px;
+  }
+}

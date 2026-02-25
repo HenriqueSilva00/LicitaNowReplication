@@ -236,13 +236,133 @@
   display: block;
 }
 
-/* Responsivo */
-@media (max-width: 900px) {
+/* =========================
+   SECOND PAGE - MOBILE ONLY
+   ========================= */
+@media (max-width: 768px) {
+  .second-page {
+    padding: 34px 0;
+  }
+
+  .second-wrap {
+    gap: 22px;
+  }
+
+  .second-header {
+    max-width: 92%;
+    margin: 0 auto 6px auto;
+    gap: 12px;
+  }
+
+  .section-tag {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .second-header h2 {
+    font-size: 2.05rem;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .second-header p {
+    font-size: 0.98rem;
+    line-height: 1.55;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* layout principal vira 1 coluna */
   .second-content {
     grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: stretch;
   }
-  .desc-panel {
-    max-width: 680px;
+
+  .circle-area {
+    gap: 14px;
+  }
+
+  /* donut mais pequeno e com stroke mais leve */
+  .donut {
+    width: min(320px, 92vw);
+  }
+
+  .donut-track {
+    stroke-width: 14px;
+  }
+
+  .donut-segment {
+    stroke-width: 14px;
+  }
+
+  .donut-center-title {
+    font-size: 1.35rem;
+  }
+
+  .donut-center-label {
+    font-size: 0.9rem;
+  }
+
+  .donut-center-sub {
+    font-size: 0.9rem;
+  }
+
+  /* legend em pills mais “touch” */
+  .circle-legend {
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .legend-pill {
+    padding: 10px 12px;
+    gap: 8px;
+    font-size: 0.92rem;
+  }
+
+  /* desc card vira vertical e sem altura fixa */
+  .desc-card {
+    grid-template-columns: 1fr;
+    height: auto;
+    max-width: 92%;
     margin: 0 auto;
+    border-radius: 16px;
+  }
+
+  .desc-left {
+    padding: 18px 16px;
+    gap: 10px;
+  }
+
+  .desc-left h3 {
+    font-size: 1.15rem;
+  }
+
+  .desc-left p {
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  .desc-right {
+    min-height: 220px; /* garante que a imagem aparece */
+  }
+
+  .desc-image {
+    height: 100%;
+  }
+}
+
+/* Extra para ecrãs muito pequenos */
+@media (max-width: 380px) {
+  .second-header h2 {
+    font-size: 1.85rem;
+  }
+
+  .donut {
+    width: min(290px, 92vw);
+  }
+
+  .desc-right {
+    min-height: 200px;
   }
 }
