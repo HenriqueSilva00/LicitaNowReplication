@@ -87,11 +87,12 @@ function Navbar() {
 
         {/* BOTÃO HAMBURGUER (mobile) */}
         <button
-          className="hamburger-btn"
+          className={`hamburger-btn ${mobileOpen ? "open" : ""}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Abrir menu"
         >
-          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          <Menu className="icon icon-menu" size={22} />
+          <X className="icon icon-close" size={22} />
         </button>
       </nav>
 

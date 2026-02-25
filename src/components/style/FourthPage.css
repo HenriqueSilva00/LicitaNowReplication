@@ -139,7 +139,7 @@
    ========================= */
 @media (max-width: 768px) {
   .fourth-page {
-    padding: 56px 0;
+    padding: 30px 0;
     overflow: hidden;
   }
 
@@ -199,29 +199,69 @@
     line-height: 1.45;
   }
 
-  /* texto */
   .fourth-right {
     gap: 12px;
-    align-items: flex-start;
-    text-align: left; /* 👈 melhor no mobile */
+    align-items: stretch; /* 👈 permite cada elemento controlar o alinhamento */
   }
 
-  .fourth-right h2 {
-    font-size: 1.95rem;
+  /* CAPÍTULO (ex: .section-tag) */
+  .fourth-right .section-tag {
+    align-self: center; /* 👈 centra só o capítulo */
+    text-align: center;
+  }
+
+  /* TÍTULO */
+  .fourth-right h1 {
+    font-size: 2.2rem;
     line-height: 1.15;
     margin: 0;
+
+    align-self: flex-start; /* 👈 força à esquerda */
+    text-align: left;
+    padding-left: 10px;
   }
 
+  /* TEXTO */
   .fourth-right p {
     font-size: 0.98rem;
     line-height: 1.6;
     margin: 0;
+
+    align-self: center; /* 👈 centra o bloco */
+    text-align: justify; /* 👈 justificado */
+
+    max-width: 95%; /* 👈 para ficar visualmente equilibrado */
+    padding: 5px 0 10px 0;
   }
 
   /* tag ligeiramente mais compacta */
   .section-tag {
     font-size: 0.8rem;
     padding: 6px 12px;
+  }
+
+  .btn-primary {
+    width: 95%; /* 👈 mais largo */
+    max-width: 420px; /* limite elegante */
+    min-height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    white-space: nowrap; /* 👈 impede quebra de linha */
+  }
+
+  .btn-icon {
+    flex-shrink: 0;
+  }
+
+  .stat-card:hover {
+    transform: none;
+    border: 1px solid rgba(133, 180, 0, 0.45);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: none;
   }
 }
 

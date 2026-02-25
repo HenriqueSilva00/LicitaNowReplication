@@ -175,10 +175,6 @@
   transition: 0.3s ease;
 }
 
-.footer-pay:hover img {
-  transform: scale(1.05);
-}
-
 .footer-img-box img {
   width: 350px; /* aumenta aqui */
   max-width: 100%; /* responsivo */
@@ -395,6 +391,10 @@
     align-items: center;
     gap: 10px;
     flex-wrap: wrap; /* mantém responsivo */
+  }
+
+  .footer-pay:hover img {
+    transform: none;
   }
 
   .footer-pay {

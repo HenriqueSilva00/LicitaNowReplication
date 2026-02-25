@@ -320,6 +320,11 @@
     justify-content: center;
   }
 
+  .btn-primary {
+    height: auto;
+    min-height: 0px;
+  }
+
   /* Top rect: 4 -> 1 coluna */
   .top-rect {
     grid-template-columns: 1fr;
@@ -334,6 +339,11 @@
     padding: 16px 14px;
     border-radius: 14px;
     z-index: 2;
+  }
+
+  .mini-square:hover {
+    transform: none;
+    background: rgba(133, 180, 0, 0.18);
   }
 
   /* Linhas inclinadas: no mobile vira linha vertical curta */

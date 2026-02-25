@@ -240,30 +240,40 @@
 
   /* --- Hamburguer (se tiveres um botão no JSX com estas classes) --- */
   .hamburger-btn {
+    position: relative;
     width: 44px;
     height: 44px;
-    padding: 0; /* ✅ evita caixa “inflar” */
     display: flex;
     align-items: center;
     justify-content: center;
-
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-
-    cursor: pointer;
-    color: #fff; /* ✅ importante para lucide */
-    line-height: 0; /* ✅ evita “ponto”/baseline */
+  }
+  /* Ambos ícones ocupam o mesmo espaço */
+  .hamburger-btn .icon {
+    position: absolute;
+    transition: all 0.35s ease;
   }
 
-  /* Força o ícone (SVG) a ter tamanho real */
-  .hamburger-btn svg {
-    width: 24px;
-    height: 24px;
-    display: block; /* ✅ remove “ponto” inline */
-    stroke-width: 2.5;
+  /* Estado inicial */
+  .icon-menu {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
   }
 
+  .icon-close {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.6);
+  }
+
+  /* Quando aberto */
+  .hamburger-btn.open .icon-menu {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.6);
+  }
+
+  .hamburger-btn.open .icon-close {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
   .navbar.navbar-scrolled .hamburger-btn {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -280,7 +290,7 @@
     inset: 0;
     z-index: 999; /* abaixo do modal (1001) e acima do site */
 
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 

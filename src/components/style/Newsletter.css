@@ -1,6 +1,6 @@
 .newsletter-page {
   background: linear-gradient(180deg, #ffffff 0%, #85b400 200%);
-  padding-bottom: 40px;
+  padding: 40px 0 40px 0;
 }
 
 .newsletter-wrap {
