@@ -11,7 +11,7 @@ function FifthPage() {
         <header className="fifth-header">
           <div className="section-tag">
             <span className="tag-dot"></span>
-            Principios
+            Princípios
           </div>
 
           <h2>Os Nossos Princípios</h2>

@@ -119,6 +119,7 @@ export default function ThirdPage() {
             const o = OFFSETS[i];
             return (
               <div
+                key={STEPS[i].title} // ✅ ou key={i}
                 className={`timeline-step step-${i}`}
                 style={{
                   left: `${px.x + o.x}px`,

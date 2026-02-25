@@ -361,7 +361,7 @@
 
   .footer-desc {
     max-width: 100%;
-    text-align: left; /* melhor no mobile */
+    text-align: justify; /* melhor no mobile */
     font-size: 0.98rem;
   }
 
@@ -394,7 +394,7 @@
   }
 
   .footer-pay:hover img {
-    transform: none;
+    transform: scale(1);
   }
 
   .footer-pay {
