@@ -194,12 +194,6 @@
   letter-spacing: 0.2px;
 }
 
-.footer-pay:hover {
-  border-color: rgba(133, 180, 0, 0.55);
-  background: rgba(133, 180, 0, 0.1);
-  transform: translateY(-2px);
-}
-
 /* NEWSLETTER */
 .footer-subtitle {
   color: rgba(255, 255, 255, 0.78);

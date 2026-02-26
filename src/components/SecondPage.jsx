@@ -128,6 +128,7 @@ function SecondPage() {
 
             <div className="desc-right">
               <img
+                key={TOPICS[active].image}
                 src={TOPICS[active].image}
                 alt={TOPICS[active].title}
                 className="desc-image"

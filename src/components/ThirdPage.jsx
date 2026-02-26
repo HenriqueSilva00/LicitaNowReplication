@@ -93,7 +93,7 @@ export default function ThirdPage() {
         <header className="third-header">
           <div className="section-tag">
             <span className="tag-dot"></span>
-            Processo Simples
+            Processo
           </div>
 
           <h2>Como Funciona</h2>

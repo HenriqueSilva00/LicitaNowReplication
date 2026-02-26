@@ -40,7 +40,12 @@ function Navbar() {
   return (
     <>
       <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
-        <div className="logo">
+        <div
+          className="logo"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          role="button"
+          aria-label="Voltar ao topo"
+        >
           <img src={logo} alt="Logo" className="logo-img" />
         </div>
 

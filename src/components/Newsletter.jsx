@@ -87,7 +87,7 @@ function Newsletter() {
             </div>
 
             <div className="form-actions">
-              <button type="submit" className="submit-btn">
+              <button className="submit-btn">
                 Enviar pedido de adesão <FaPaperPlane className="btn-icon" />
               </button>
 

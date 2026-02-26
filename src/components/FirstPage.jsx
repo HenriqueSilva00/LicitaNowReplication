@@ -17,11 +17,11 @@ function FirstPage() {
                 Simplificamos concursos e projetos de construção em Portugal
               </h1>
               <p className="hero-subtitle">
-                A LicitaNow é a plataforma digital que liga empresas,
-                fornecedores e profissionais da construção a oportunidades
-                reais, simplificando concursos, coordenação de projetos e
-                fiscalização de obras — com transparência, eficiência e
-                critérios claros em cada etapa.
+                A <span className="brand-highlight">LicitaNow</span> é a
+                plataforma digital que liga empresas, fornecedores e
+                profissionais da construção a oportunidades reais, simplificando
+                concursos, coordenação de projetos e fiscalização de obras — com
+                transparência, eficiência e critérios claros em cada etapa.
               </p>
             </div>
 

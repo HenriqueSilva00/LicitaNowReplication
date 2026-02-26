@@ -32,7 +32,7 @@
 }
 
 .logo-img {
-  height: 50px; /* controla o tamanho */
+  height: 60px; /* controla o tamanho */
   width: auto;
   object-fit: contain;
   margin-left: 5rem;
