@@ -3,8 +3,8 @@
   bottom: 30px;
   right: 30px;
 
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 
   border-radius: 14px;
   border: none;
@@ -39,17 +39,17 @@
 
 @media (max-width: 768px) {
   .cookie-button {
-    bottom: 18px; /* menos afastado do fundo */
-    right: 12px; /* 👈 mais encostado à lateral */
+    bottom: 18px;
+    right: 12px;
 
-    width: 40px; /* menor */
-    height: 40px;
+    width: 48px; /* ligeiramente maior */
+    height: 48px;
 
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
   .cookie-button img {
-    width: 18px; /* 👈 ícone mais pequeno */
-    height: 18px;
+    width: 26px; /* 50-55% do botão fica visualmente correto */
+    height: 26px;
   }
 }

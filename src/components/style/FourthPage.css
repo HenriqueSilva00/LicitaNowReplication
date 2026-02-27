@@ -12,7 +12,7 @@
 
   background: url("../../assets/orangebackground.jpg") center/cover no-repeat;
 
-  filter: blur(12px); /* 👈 intensidade do desfoque */
+  filter: blur(9px); /* 👈 intensidade do desfoque */
   transform: scale(1.1); /* evita cortar bordas ao aplicar blur */
   z-index: 0;
 }
@@ -117,6 +117,7 @@
 
 .fourth-right p {
   color: rgba(255, 255, 255, 0.78);
+  font-size: 17px;
 }
 
 /* tag já está verde, mas dá mais contraste no dark */

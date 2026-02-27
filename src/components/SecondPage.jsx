@@ -109,7 +109,7 @@ function SecondPage() {
                   type="button"
                 >
                   <span className="dot" style={{ background: t.color }} />
-                  {t.short}
+                  {t.title}
                 </button>
               ))}
             </div>

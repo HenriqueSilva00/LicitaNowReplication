@@ -112,7 +112,7 @@
 .donut-segment.is-active {
   opacity: 1;
   filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.14));
-  transform: scale(1.03);
+  transform: scale(1.08);
 }
 
 .donut-center {
@@ -180,7 +180,7 @@
 
 .legend-pill.is-active {
   border-color: rgba(127, 173, 1, 0.6);
-  background: rgba(127, 173, 1, 0.08);
+  background: rgba(127, 173, 1, 0.342);
   color: #111;
 }
 

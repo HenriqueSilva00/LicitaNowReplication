@@ -5,12 +5,20 @@
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Configurações base */
 html,
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* importante */
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -45,4 +53,17 @@ body {
 /* Hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #6f9500;
+}
+
+/* 4) Container principal não deve exceder viewport */
+#root,
+.app-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip; /* melhor que hidden, quando suportado */
+}
+
+/* 5) Proteção extra para grids/flex que forçam min-width */
+* {
+  min-width: 0;
 }

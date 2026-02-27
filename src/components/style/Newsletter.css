@@ -228,6 +228,10 @@
     width: 92%;
   }
 
+  .newsletter-header {
+    padding: 40px 0 0 0;
+  }
+
   .form-grid {
     grid-template-columns: 1fr;
   }
